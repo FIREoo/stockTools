@@ -85,9 +85,9 @@ def dayDiff(str1, str2):
 # fromDate = input("起始日期:")
 # toDate = input("結束日期:")
 
-Name = 'U'
-fromDate = '2021-1-5'
-toDate = '2021-1-8'
+Name = sys.argv[1]  #'U'
+fromDate = sys.argv[2]  # '2021-1-5'
+toDate = sys.argv[3]  #'2021-1-8'
 
 print(dayDiff(fromDate, toDate))  #有幾天
 Ts = toTimeZone(datetime.datetime.strptime(fromDate + ' 01:00', '%Y-%m-%d %H:%M'), 'TST', 'epoch')
@@ -129,5 +129,3 @@ df = pd.DataFrame(np.array([getData_open, getData_high, getData_low, getData_clo
 
 print(df)
 df.to_csv(r'file.csv')
-
-print(sys.argv[1])
